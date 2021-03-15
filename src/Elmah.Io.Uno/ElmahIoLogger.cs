@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Windows.Devices.Enumeration;
 using Windows.Graphics.Display;
+using Windows.System.Profile;
 
 namespace Elmah.Io.Uno
 {
@@ -52,15 +53,8 @@ namespace Elmah.Io.Uno
                 ServerVariables = new List<Item>(),
             };
 
-            var os = "android"; // TODO: replace with dynamic OS name
-            var osVersion = "9.0"; // TODO: replace with dynamic OS version
-
-            // This doesn't work in class libraries
-#if __ANDROID__
-            os = "android";
-#elif __IOS__
-            os = "ios";
-#endif
+            var os = (AnalyticsInfo.VersionInfo.DeviceFamily ?? "unknown").Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries)[0];
+            var osVersion = AnalyticsInfo.VersionInfo.DeviceFamilyVersion ?? "unknown";
 
             createMessage.ServerVariables.Add(new Item("User-Agent", $"X-ELMAHIO-MOBILE; OS={os}; OSVERSION={osVersion}; ENGINE=Uno"));
 
