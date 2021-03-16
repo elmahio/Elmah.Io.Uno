@@ -4,18 +4,23 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Windows.Devices.Enumeration;
 using Windows.Graphics.Display;
 using Windows.System.Profile;
 
 namespace Elmah.Io.Uno
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class ElmahIoLogger : ILogger
     {
         private const string OriginalFormatPropertyKey = "{OriginalFormat}";
         private readonly IElmahioAPI _elmahioApi;
         private readonly Guid _logId;
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         public ElmahIoLogger(string apiKey, Guid logId, ElmahIoProviderOptions options)
         {
             _logId = logId;
@@ -24,16 +29,25 @@ namespace Elmah.Io.Uno
             _elmahioApi.Messages.OnMessageFail += (sender, args) => options.OnError?.Invoke(args.Message, args.Error);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         public IDisposable BeginScope<TState>(TState state)
         {
             return null;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         public bool IsEnabled(LogLevel logLevel)
         {
             return logLevel >= LogLevel.Warning;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
             if (formatter == null)

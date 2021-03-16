@@ -3,6 +3,9 @@ using System;
 
 namespace Elmah.Io.Uno
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class ElmahIoProviderOptions
     {
         /// <summary>
