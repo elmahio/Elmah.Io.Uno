@@ -17,6 +17,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elmah.Io.UnoSample.Droid", "samples\Elmah.Io.UnoSample\Elmah.Io.UnoSample.Droid\Elmah.Io.UnoSample.Droid.csproj", "{631A865D-0D10-4E8C-82D3-A042858BB4E4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{92E4178B-CF1E-4BBA-84D2-C4CA4B6BD6D5}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build.yml = .github\workflows\build.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		samples\Elmah.Io.UnoSample\Elmah.Io.UnoSample.Shared\Elmah.Io.UnoSample.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
