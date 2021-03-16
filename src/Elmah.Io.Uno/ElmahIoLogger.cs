@@ -53,8 +53,10 @@ namespace Elmah.Io.Uno
                 ServerVariables = new List<Item>(),
             };
 
+#pragma warning disable Uno0001 // Uno type or member is not implemented
             var os = (AnalyticsInfo.VersionInfo.DeviceFamily ?? "unknown").Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries)[0];
             var osVersion = AnalyticsInfo.VersionInfo.DeviceFamilyVersion ?? "unknown";
+#pragma warning restore Uno0001 // Uno type or member is not implemented
 
             createMessage.ServerVariables.Add(new Item("User-Agent", $"X-ELMAHIO-MOBILE; OS={os}; OSVERSION={osVersion}; ENGINE=Uno"));
 
