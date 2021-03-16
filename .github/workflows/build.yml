@@ -12,17 +12,16 @@ jobs:
     steps:
     - name: Checkout project
       uses: actions/checkout@v2
-    - name: Setup .NET Core 3.1
+    - name: Setup .NET 5
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.x
+        dotnet-version: 5.0.x
     - name: Install dependencies
-      run: |
-        dotnet restore src/Elmah.Io.Uno/Elmah.Io.Uno.csproj
+      run: dotnet restore src/Elmah.Io.Uno/Elmah.Io.Uno.csproj
     - name: Build
       run: dotnet build --configuration Release --no-restore src/Elmah.Io.Uno/Elmah.Io.Uno.csproj
     - name: Pack
-      run: dotnet pack --configuration Release src/Elmah.Io.Uno/Elmah.Io.Uno.csproj /p:Version=3.0.${{ github.run_number }}-pre
+      run: dotnet pack --configuration Release --no-restore src/Elmah.Io.Uno/Elmah.Io.Uno.csproj /p:Version=3.0.${{ github.run_number }}-pre
     - name: Push
       run: dotnet nuget push src/Elmah.Io.Uno/bin/Release/Elmah.Io.Uno.3.0.${{ github.run_number }}-pre.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
       if: ${{ github.event_name == 'push' }}
