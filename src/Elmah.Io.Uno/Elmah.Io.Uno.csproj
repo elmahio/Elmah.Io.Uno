@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.54">
 
   <PropertyGroup>
     <Description>Log to elmah.io from Uno</Description>
     <Authors>elmah.io</Authors>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>uap10.0.17763;netstandard2.0;xamarinios10;xamarinmac20;monoandroid10.0</TargetFrameworks>
     <AssemblyName>Elmah.Io.Uno</AssemblyName>
     <PackageId>Elmah.Io.Uno</PackageId>
     <PackageTags>Error;Exception;Reporting;Management;Logging;Uno;UnoPlatform;Crash</PackageTags>
@@ -17,6 +17,7 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
     <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Version>3.0.1-pre</Version>
     <!-- SourceLink -->
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>

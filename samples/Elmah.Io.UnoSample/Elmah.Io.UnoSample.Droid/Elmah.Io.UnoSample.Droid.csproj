@@ -90,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\src\Elmah.Io.Uno\Elmah.Io.Uno.csproj">
-      <Project>{b1632d04-f4ef-484a-9c44-ffde65be7c6c}</Project>
+      <Project>{d5c52f74-6269-4d1b-917f-d577e47f6a03}</Project>
       <Name>Elmah.Io.Uno</Name>
     </ProjectReference>
   </ItemGroup>
