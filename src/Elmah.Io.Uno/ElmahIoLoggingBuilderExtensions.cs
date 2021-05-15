@@ -1,8 +1,7 @@
 ﻿using System;
 using Elmah.Io.Uno;
-using Microsoft.Extensions.Logging;
 
-namespace Elmah.Io.Uno
+namespace Microsoft.Extensions.Logging
 {
     public static class ElmahIoLoggingBuilderExtensions
     {

@@ -78,6 +78,7 @@ namespace Elmah.Io.Uno
             if (displayInfo != null)
             {
                 var width = displayInfo.ScreenWidthInRawPixels;
+
                 var height = displayInfo.ScreenHeightInRawPixels;
                 var orientation = displayInfo.CurrentOrientation;
                 if (width > 0) createMessage.Data.Add(new Item("Screen-Width", width.ToString()));

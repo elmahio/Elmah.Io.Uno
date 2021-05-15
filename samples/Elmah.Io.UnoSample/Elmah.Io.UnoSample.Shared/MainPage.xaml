@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Hello, world!" Margin="20" FontSize="30" />
-        <Button Click="Button_Click">Click me</Button>
+		<TextBlock Text="Hello, world!" Margin="20" FontSize="30" />
+        <Button Click="Button_Click">Throw error</Button>
     </Grid>
 </Page>
