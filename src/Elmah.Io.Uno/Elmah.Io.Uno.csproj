@@ -30,9 +30,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
-    <PackageReference Include="Elmah.Io.Client" Version="[3.11.13-pre,4)" />
-    <PackageReference Include="Uno.UI" Version="3.5.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="1.1.1" />
+    <PackageReference Include="Elmah.Io.Client" Version="[3.12.18-pre,4)" />
+    <PackageReference Include="Uno.UI" Version="3.7.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
