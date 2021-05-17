@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnoUI = Uno.UI;
 using Windows.Graphics.Display;
 using Windows.System.Profile;
 
@@ -74,6 +75,10 @@ namespace Elmah.Io.Uno
 
             createMessage.ServerVariables.Add(new Item("User-Agent", $"X-ELMAHIO-MOBILE; OS={os}; OSVERSION={osVersion}; ENGINE=Uno"));
 
+#if __ANDROID__
+            if (UnoUI.ContextHelper.Current != null)
+            {
+#endif
             var displayInfo = DisplayInformation.GetForCurrentView();
             if (displayInfo != null)
             {
@@ -95,6 +100,9 @@ namespace Elmah.Io.Uno
                         break;
                 }
             }
+#if __ANDROID__
+            }
+#endif
 
             createMessage.Data.Add(new Item("X-ELMAHIO-DevicePlatform", os));
             createMessage.Data.Add(new Item("X-ELMAHIO-SEARCH-isMobile", true.ToString()));
