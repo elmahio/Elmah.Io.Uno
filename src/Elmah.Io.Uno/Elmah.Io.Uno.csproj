@@ -1,15 +1,8 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.22">
 
   <PropertyGroup>
-    <Description>Log to elmah.io from Uno</Description>
-    <Authors>elmah.io</Authors>
     <TargetFrameworks>uap10.0.17763;netstandard2.0;xamarinios10;xamarinmac20;monoandroid10.0</TargetFrameworks>
     <AssemblyName>Elmah.Io.Uno</AssemblyName>
-    <PackageId>Elmah.Io.Uno</PackageId>
-    <PackageTags>Error;Exception;Reporting;Management;Logging;Uno;UnoPlatform;Crash</PackageTags>
-    <PackageIconUrl>https://secure.gravatar.com/avatar/5c4cb3646528821117abde6d2d5ee22d?s=64</PackageIconUrl>
-    <PackageIcon>icon.png</PackageIcon>
-    <PackageProjectUrl>https://elmah.io</PackageProjectUrl>
     <RepositoryUrl>https://github.com/elmahio/Elmah.Io.Uno</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
