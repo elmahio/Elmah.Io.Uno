@@ -39,6 +39,7 @@
         <dependency id="Microsoft.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
         <dependency id="Uno.UI" version="3.8.0-dev.302" exclude="Build,Analyzers" />
       </group>
+    </dependencies>
   </metadata>
   <files>
     <None Include="images\icon.png" Pack="true" PackagePath="\" />
