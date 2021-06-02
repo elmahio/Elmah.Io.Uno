@@ -24,8 +24,8 @@ jobs:
       run: dotnet restore src/Elmah.Io.Uno/Elmah.Io.Uno.csproj
     - name: Build
       run: msbuild src/Elmah.Io.Uno/Elmah.Io.Uno.csproj -p:Configuration=Release
-    # - name: Pack
-    #   run: dotnet pack --configuration Release --no-restore src/Elmah.Io.Uno/Elmah.Io.Uno.csproj /p:Version=3.0.${{ github.run_number }}-pre
-    # - name: Push
-    #   run: dotnet nuget push src/Elmah.Io.Uno/bin/Release/Elmah.Io.Uno.3.0.${{ github.run_number }}-pre.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
-    #   if: ${{ github.event_name == 'push' }}
+    - name: Pack
+      run: nuget pack Elmah.Io.Uno.nuspec -Version 3.0.${{ github.run_number }}-pre -Properties Configuration=Release -Properties Commit=${{ github.sha }}
+    - name: Push
+      run: dotnet nuget push Elmah.Io.Uno.3.0.${{ github.run_number }}-pre.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      if: ${{ github.event_name == 'push' }}

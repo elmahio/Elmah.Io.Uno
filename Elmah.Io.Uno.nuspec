@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Elmah.Io.Uno</id>
+    <version>$version$</version>
+    <authors>elmah.io</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://elmah.io/</projectUrl>
+    <iconUrl>https://secure.gravatar.com/avatar/5c4cb3646528821117abde6d2d5ee22d?s=64</iconUrl>
+    <description>Log to elmah.io from Uno</description>
+    <tags>Error Exception Reporting Management Logging Uno Crash</tags>
+    <repository type="git" url="https://github.com/elmahio/Elmah.Io.Uno" commit="6e68417528303436d1052297ed30e991886cb3b6" />
+    <dependencies>
+      <group targetFramework="MonoAndroid10.0">
+        <dependency id="Elmah.Io.Client" version="[3.12.18-pre, 4.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Uno.UI" version="3.8.0-dev.302" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="Xamarin.iOS1.0">
+        <dependency id="Elmah.Io.Client" version="[3.12.18-pre, 4.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Uno.UI" version="3.8.0-dev.302" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="Xamarin.Mac2.0">
+        <dependency id="Elmah.Io.Client" version="[3.12.18-pre, 4.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Uno.UI" version="3.8.0-dev.302" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Elmah.Io.Client" version="[3.12.18-pre, 4.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Uno.UI" version="3.8.0-dev.302" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="UAP10.0.17763">
+        <dependency id="Elmah.Io.Client" version="[3.12.18-pre, 4.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="Uno.UI" version="3.8.0-dev.302" exclude="Build,Analyzers" />
+      </group>
+  </metadata>
+  <files>
+    <None Include="images\icon.png" Pack="true" PackagePath="\" />
+  </files>
+</package>
