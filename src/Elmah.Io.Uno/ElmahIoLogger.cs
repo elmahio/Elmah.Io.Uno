@@ -79,26 +79,33 @@ namespace Elmah.Io.Uno
             if (UnoUI.ContextHelper.Current != null)
             {
 #endif
-            var displayInfo = DisplayInformation.GetForCurrentView();
-            if (displayInfo != null)
+            try
             {
-                var width = displayInfo.ScreenWidthInRawPixels;
-
-                var height = displayInfo.ScreenHeightInRawPixels;
-                var orientation = displayInfo.CurrentOrientation;
-                if (width > 0) createMessage.Data.Add(new Item("Screen-Width", width.ToString()));
-                if (height > 0) createMessage.Data.Add(new Item("Screen-Height", height.ToString()));
-                switch (orientation)
+                var displayInfo = DisplayInformation.GetForCurrentView();
+                if (displayInfo != null)
                 {
-                    case DisplayOrientations.Landscape:
-                    case DisplayOrientations.LandscapeFlipped:
-                        createMessage.Data.Add(new Item("Screen-Orientation", "landscape"));
-                        break;
-                    case DisplayOrientations.Portrait:
-                    case DisplayOrientations.PortraitFlipped:
-                        createMessage.Data.Add(new Item("Screen-Orientation", "portrait"));
-                        break;
+                    var width = displayInfo.ScreenWidthInRawPixels;
+
+                    var height = displayInfo.ScreenHeightInRawPixels;
+                    var orientation = displayInfo.CurrentOrientation;
+                    if (width > 0) createMessage.Data.Add(new Item("Screen-Width", width.ToString()));
+                    if (height > 0) createMessage.Data.Add(new Item("Screen-Height", height.ToString()));
+                    switch (orientation)
+                    {
+                        case DisplayOrientations.Landscape:
+                        case DisplayOrientations.LandscapeFlipped:
+                            createMessage.Data.Add(new Item("Screen-Orientation", "landscape"));
+                            break;
+                        case DisplayOrientations.Portrait:
+                        case DisplayOrientations.PortraitFlipped:
+                            createMessage.Data.Add(new Item("Screen-Orientation", "portrait"));
+                            break;
+                    }
                 }
+            }
+            catch
+            {
+                // Could be called to early. Continue logging without screen data.
             }
 #if __ANDROID__
             }
