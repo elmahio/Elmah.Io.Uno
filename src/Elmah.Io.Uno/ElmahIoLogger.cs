@@ -1,5 +1,4 @@
 ﻿using Elmah.Io.Client;
-using Elmah.Io.Client.Models;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -24,7 +23,7 @@ namespace Elmah.Io.Uno
         public ElmahIoLogger(string apiKey, Guid logId, ElmahIoProviderOptions options)
         {
             _logId = logId;
-            _elmahioApi = new ElmahioAPI(new ApiKeyCredentials(apiKey), HttpClientHandlerFactory.GetHttpClientHandler(new ElmahIoOptions()));
+            _elmahioApi = ElmahioAPI.Create(apiKey);
             _elmahioApi.Messages.OnMessage += (sender, args) => options.OnMessage?.Invoke(args.Message);
             _elmahioApi.Messages.OnMessageFail += (sender, args) => options.OnError?.Invoke(args.Message, args.Error);
         }
