@@ -15,29 +15,29 @@
     <repository type="git" url="https://github.com/elmahio/Elmah.Io.Uno" commit="6e68417528303436d1052297ed30e991886cb3b6" />
     <dependencies>
       <group targetFramework="MonoAndroid10.0">
-        <dependency id="Elmah.Io.Client" version="[3.12.18-pre, 4.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Elmah.Io.Client" version="[4.0.24-pre, 5.0.0)" exclude="Build,Analyzers" />
         <dependency id="Microsoft.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
-        <dependency id="Uno.UI" version="3.8.0-dev.302" exclude="Build,Analyzers" />
+        <dependency id="Uno.UI" version="3.8.6" exclude="Build,Analyzers" />
       </group>
       <group targetFramework="Xamarin.iOS1.0">
-        <dependency id="Elmah.Io.Client" version="[3.12.18-pre, 4.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Elmah.Io.Client" version="[4.0.24-pre, 5.0.0)" exclude="Build,Analyzers" />
         <dependency id="Microsoft.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
-        <dependency id="Uno.UI" version="3.8.0-dev.302" exclude="Build,Analyzers" />
+        <dependency id="Uno.UI" version="3.8.6" exclude="Build,Analyzers" />
       </group>
       <group targetFramework="Xamarin.Mac2.0">
-        <dependency id="Elmah.Io.Client" version="[3.12.18-pre, 4.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Elmah.Io.Client" version="[4.0.24-pre, 5.0.0)" exclude="Build,Analyzers" />
         <dependency id="Microsoft.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
-        <dependency id="Uno.UI" version="3.8.0-dev.302" exclude="Build,Analyzers" />
+        <dependency id="Uno.UI" version="3.8.6" exclude="Build,Analyzers" />
       </group>
       <group targetFramework=".NETStandard2.0">
-        <dependency id="Elmah.Io.Client" version="[3.12.18-pre, 4.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Elmah.Io.Client" version="[4.0.24-pre, 5.0.0)" exclude="Build,Analyzers" />
         <dependency id="Microsoft.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
-        <dependency id="Uno.UI" version="3.8.0-dev.302" exclude="Build,Analyzers" />
+        <dependency id="Uno.UI" version="3.8.6" exclude="Build,Analyzers" />
       </group>
       <group targetFramework="UAP10.0.17763">
-        <dependency id="Elmah.Io.Client" version="[3.12.18-pre, 4.0.0)" exclude="Build,Analyzers" />
+        <dependency id="Elmah.Io.Client" version="[4.0.24-pre, 5.0.0)" exclude="Build,Analyzers" />
         <dependency id="Microsoft.Extensions.Logging" version="5.0.0" exclude="Build,Analyzers" />
-        <dependency id="Uno.UI" version="3.8.0-dev.302" exclude="Build,Analyzers" />
+        <dependency id="Uno.UI" version="3.8.6" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>
