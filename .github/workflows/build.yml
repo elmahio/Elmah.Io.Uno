@@ -16,7 +16,7 @@ jobs:
       uses: nuget/setup-nuget@v1
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
-    - name: Setup .NET Core 3.1
+    - name: Setup .NET 5.0
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
