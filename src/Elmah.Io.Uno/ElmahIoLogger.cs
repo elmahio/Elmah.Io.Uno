@@ -3,6 +3,8 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Text;
 using Windows.Graphics.Display;
 using Windows.System.Profile;
 
@@ -13,6 +15,7 @@ namespace Elmah.Io.Uno
     /// </summary>
     public class ElmahIoLogger : ILogger
     {
+        internal static string _assemblyVersion = typeof(ElmahIoLogger).Assembly.GetName().Version.ToString();
         private const string OriginalFormatPropertyKey = "{OriginalFormat}";
         private readonly IElmahioAPI _elmahioApi;
         private readonly Guid _logId;
@@ -23,7 +26,10 @@ namespace Elmah.Io.Uno
         public ElmahIoLogger(string apiKey, Guid logId, ElmahIoProviderOptions options)
         {
             _logId = logId;
-            _elmahioApi = ElmahioAPI.Create(apiKey);
+            _elmahioApi = ElmahioAPI.Create(apiKey, new ElmahIoOptions
+            {
+                UserAgent = UserAgent(),
+            });
             _elmahioApi.Messages.OnMessage += (sender, args) => options.OnMessage?.Invoke(args.Message);
             _elmahioApi.Messages.OnMessageFail += (sender, args) => options.OnError?.Invoke(args.Message, args.Error);
         }
@@ -158,6 +164,13 @@ namespace Elmah.Io.Uno
         private string Type(Exception exception)
         {
             return exception?.GetBaseException().GetType().FullName;
+        }
+
+        private static string UserAgent()
+        {
+            return new StringBuilder()
+                .Append(new ProductInfoHeaderValue(new ProductHeaderValue("Elmah.Io.Uno", _assemblyVersion)).ToString())
+                .ToString();
         }
     }
 }
