@@ -25,7 +25,7 @@ jobs:
     - name: Build
       run: msbuild src/Elmah.Io.Uno/Elmah.Io.Uno.csproj -p:Configuration=Release
     - name: Pack
-      run: nuget pack Elmah.Io.Uno.nuspec -Version 4.0.${{ github.run_number }}-pre -Properties Configuration=Release -Properties Commit=${{ github.sha }}
+      run: nuget pack Elmah.Io.Uno.nuspec -Version 5.0.${{ github.run_number }}-pre -Properties Configuration=Release -Properties Commit=${{ github.sha }}
     - name: Push
-      run: dotnet nuget push Elmah.Io.Uno.4.0.${{ github.run_number }}-pre.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push Elmah.Io.Uno.5.0.${{ github.run_number }}-pre.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
       if: ${{ github.event_name == 'push' }}
