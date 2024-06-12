@@ -22,8 +22,6 @@ jobs:
         dotnet-version: |
           5.0.x
           8.0.x
-    - name: Uninstall .NET workload
-      run: dotnet workload clean --all
     - name: Run uno-check
       shell: bash
       run: |
