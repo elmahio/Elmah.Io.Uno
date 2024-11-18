@@ -26,6 +26,10 @@ jobs:
       run: |
         dotnet tool install --global Uno.Check --version 1.27.1
         uno-check -v --ci --non-interactive --fix --skip vswin --skip androidemulator
+    - name: Install Android SDK components
+      shell: bash
+      run: |
+        yes | sdkmanager "platform-tools" "platforms;android-29" "build-tools;29.0.3"
     - name: Install dependencies
       run: dotnet restore src/Elmah.Io.Uno/Elmah.Io.Uno.csproj
     - name: Build
