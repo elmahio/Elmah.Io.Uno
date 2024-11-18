@@ -21,11 +21,10 @@ jobs:
       with:
         dotnet-version: |
           5.0.x
-          8.0.200
     - name: Run uno-check
       shell: bash
       run: |
-        dotnet tool install --global Uno.Check --version 1.20.0
+        dotnet tool install --global Uno.Check --version 1.27.1
         uno-check -v --ci --non-interactive --fix --skip vswin --skip androidemulator
     - name: Install dependencies
       run: dotnet restore src/Elmah.Io.Uno/Elmah.Io.Uno.csproj
